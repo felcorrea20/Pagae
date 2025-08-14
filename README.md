@@ -1,17 +1,17 @@
 # Rodei
-NOME DO SISTEMA: RODEI.
+NOME DO SISTEMA: Pagae.
 
-OBJETIVO DO SISTEMA: Criar um aplicativo de aluguel de veículos que cobre por hora.
+OBJETIVO DO SISTEMA: Criar um aplicativo de gerenciamento de contas/despesas compartilhadas.
 
-PÚBLICO-ALVO: Pessoas que não têm condições de ter um carro ou manter um.
+PÚBLICO-ALVO: Pessoas jovem-adultas que fazem atividades financeiras em grupo (restaurante, dividir contas da residência).
 
-PRINCIPAIS FUNCIONALIDADES: Sistema de reservas com tempo real e geolocalização. Cadastro e login de usuários - com validação de CNH e identidade. Validação da forma de pagamento (cartão de crédito e afins). Dashboard para fornecedores. Histórico de viagens e suporte no app.
+PRINCIPAIS FUNCIONALIDADES: Dividir pagamento de conta por porcentagem, produto consumido ou critério customizado pelo usuário; adicionar amigos em um grupo ou mais relacionado a alguma atividade; fornecer relatório de despesas.
 
-PROBLEMAS RESOLVIDOS: Falta de opções acessíveis e flexíveis para quem precisa de um carro por um curto período de tempo.O app oferece aluguel por hora, ideal para compromissos rápidos sem os custos de uma diária ou corrida por aplicativo.
+PROBLEMAS RESOLVIDOS: Confusão e desorganização na hora de pagar contas em conjunto.
 
-RECURSOS DESEJADOS: App para Android e iOS. Integração com GPS e Google Maps. Pagamento via cartão e pix. OCR para validar CNH.
+RECURSOS DESEJADOS: App para Android e iOS. Integração com api's bancárias para automatizar informações de despesas. Leitura de scanner por foto para pagar boletos.
 
-PLATAFORMA: Aplicativo para usuários. Web para admin ou fornecedores.
+PLATAFORMA: Aplicativo para usuários.
 
 PRAZO E EXPECTATIVAS: Prototipagem e validação da ideia - 2 semanas. Desenvolvimento do MVP - 2 a 3 meses. Testes com usuários reais - 2 meses. Lançamento da primeira versão pública - 1 ano.
 
