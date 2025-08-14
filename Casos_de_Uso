@@ -1,0 +1,56 @@
+## **Caso de Uso 1 – Divisão Automática de Valores entre Participantes**
+
+**Nome:** Divisão Automática de Valores entre Participantes
+**Pré-condição:**
+
+* O usuário deve estar autenticado no aplicativo.
+* O grupo e a despesa já devem estar cadastrados no sistema.
+
+**Fluxo Principal:**
+
+1. O usuário seleciona o grupo em que a despesa será dividida.
+2. O usuário cadastra ou seleciona uma despesa já existente (informando valor total, descrição e data).
+3. O sistema identifica todos os participantes ativos no grupo.
+4. O sistema aplica automaticamente o cálculo da divisão (igualitária ou proporcional, conforme configuração do grupo).
+5. O sistema apresenta a cada participante o valor que lhe corresponde.
+6. O sistema registra a divisão no histórico do grupo e envia notificações aos participantes.
+
+**Fluxo Alternativo:**
+
+* **A1 – Alteração manual dos valores:** Antes de confirmar a divisão, o usuário ajusta manualmente quanto cada participante deve pagar, e o sistema recalcula os demais valores para manter o saldo total correto.
+* **A2 – Participante isento:** Caso um participante seja marcado como isento (ex.: convidado especial), o sistema redistribui o valor entre os demais.
+
+**Pós-condições:**
+
+* A despesa é registrada com a divisão detalhada para cada participante.
+* Os participantes recebem notificação com o valor devido.
+
+---
+
+## **Caso de Uso 2 – Registro de Pagamentos Feitos Dentro ou Fora do App**
+
+**Nome:** Registro de Pagamentos Feitos Dentro ou Fora do App
+**Pré-condição:**
+
+* O usuário deve estar autenticado no aplicativo.
+* Deve existir ao menos uma despesa com saldo pendente no grupo.
+
+**Fluxo Principal:**
+
+1. O usuário seleciona o grupo e a despesa pendente que deseja registrar o pagamento.
+2. O usuário escolhe se o pagamento foi realizado **dentro do app** (via integração com métodos de pagamento) ou **fora do app** (transferência bancária, dinheiro, etc.).
+3. Caso seja **dentro do app**, o usuário seleciona o método de pagamento e conclui a transação.
+4. Caso seja **fora do app**, o usuário informa a data, valor e opcionalmente anexa comprovante.
+5. O sistema atualiza o saldo do participante e marca a parcela como paga (total ou parcialmente).
+6. O sistema registra o pagamento no histórico e envia notificações aos envolvidos.
+
+**Fluxo Alternativo:**
+
+* **A1 – Pagamento parcial:** O usuário informa um valor inferior ao total devido; o sistema atualiza o saldo remanescente.
+* **A2 – Pagamento rejeitado (dentro do app):** Caso o pagamento falhe, o sistema exibe mensagem de erro e mantém o saldo pendente.
+
+**Pós-condições:**
+
+* O pagamento é registrado no histórico do grupo.
+* Os saldos dos participantes são atualizados automaticamente.
+* Todos os envolvidos são notificados da atualização.
