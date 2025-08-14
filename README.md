@@ -1,19 +1,44 @@
 # Rodei
-NOME DO SISTEMA: RODEI.
+NOME DO SISTEMA: Pagae
 
-OBJETIVO DO SISTEMA: Criar um aplicativo de aluguel de veículos que cobre por hora.
+OBJETIVO DO SISTEMA: Criar um aplicativo que facilite a divisão e o controle de despesas em grupo, automatizando cálculos, notificações e registros de pagamentos.
 
-PÚBLICO-ALVO: Pessoas que não têm condições de ter um carro ou manter um.
+PÚBLICO-ALVO: Grupos de amigos, colegas de trabalho, famílias, repúblicas, organizadores de eventos e qualquer pessoa que compartilhe despesas regularmente.
 
-PRINCIPAIS FUNCIONALIDADES: Sistema de reservas com tempo real e geolocalização. Cadastro e login de usuários - com validação de CNH e identidade. Validação da forma de pagamento (cartão de crédito e afins). Dashboard para fornecedores. Histórico de viagens e suporte no app.
+PRINCIPAIS FUNCIONALIDADES:
 
-PROBLEMAS RESOLVIDOS: Falta de opções acessíveis e flexíveis para quem precisa de um carro por um curto período de tempo.O app oferece aluguel por hora, ideal para compromissos rápidos sem os custos de uma diária ou corrida por aplicativo.
+- Cadastro e login de usuários.
+- Registro de despesas individuais ou coletivas.
+- Divisão automática de valores entre participantes.
+- Registro de pagamentos feitos dentro ou fora do app.
+- Notificações de pendências e lembretes automáticos.
+- Relatórios detalhados de gastos e saldos.
+- Suporte a múltiplos grupos/eventos simultâneos.
+- Possibilidade de ajustes manuais para divisões personalizadas.
 
-RECURSOS DESEJADOS: App para Android e iOS. Integração com GPS e Google Maps. Pagamento via cartão e pix. OCR para validar CNH.
+PROBLEMAS RESOLVIDOS:
 
-PLATAFORMA: Aplicativo para usuários. Web para admin ou fornecedores.
+- Dificuldade em calcular de forma justa a divisão de gastos entre várias pessoas.
+- Esquecimento de pagamentos ou falta de controle sobre quem já pagou.
+- Falta de transparência nos gastos de grupos e eventos.
+- Perda de tempo com planilhas e anotações manuais.
 
-PRAZO E EXPECTATIVAS: Prototipagem e validação da ideia - 2 semanas. Desenvolvimento do MVP - 2 a 3 meses. Testes com usuários reais - 2 meses. Lançamento da primeira versão pública - 1 ano.
+RECURSOS DESEJADOS:
+
+- App para Android e iOS.
+- Integração com Pix, cartão de crédito e carteiras digitais.
+- Exportação de relatórios em PDF/Excel.
+- Notificações push e por e-mail.
+- Suporte a múltiplas moedas.
+
+PLATAFORMA: Aplicativo para usuários (Android e iOS) e painel web para administradores/organizadores.
+
+PRAZO E EXPECTATIVAS:
+
+- Prototipagem e validação da ideia – 3 semanas.
+- Desenvolvimento do MVP – 3 a 4 meses.
+- Testes com usuários reais – 2 meses.
+- Lançamento da primeira versão pública – 9 a 12 meses.
 
 
 Integrantes:  Felipe Corrêa, Guilherme Almeida, Lucas Villalba, Fernando Alexandre, Miguel Lima. 
