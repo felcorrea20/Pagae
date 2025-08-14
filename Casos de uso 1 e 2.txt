@@ -1,0 +1,33 @@
+Caso de Uso 1: Cadastro de Usuário
+Ator Principal: Usuário do aplicativo
+Pré-condições: O usuário possui acesso ao aplicativo.
+
+Fluxo Principal:
+1. O usuário seleciona a opção "Criar Conta" no menu inicial.
+2. O sistema exibe um formulário de cadastro com campos obrigatórios (nome, e-mail, senha, etc.).
+3. O usuário preenche os campos e confirma o cadastro.
+4. O sistema valida os dados e cria a conta.
+5. O sistema exibe uma mensagem de sucesso e direciona o usuário para a tela de login.
+
+Fluxo Alternativo:
+- No passo 3, se algum campo obrigatório estiver vazio ou inválido, o sistema exibe uma mensagem de erro e impede o cadastro.
+
+Pós-condições: O usuário está registrado no sistema e pode acessar sua conta.
+
+
+Caso de Uso 2: Login de Usuário
+Ator Principal: Usuário do aplicativo
+Pré-condições: O usuário possui cadastro ativo no sistema.
+
+Fluxo Principal:
+1. O usuário seleciona "Entrar" no menu inicial.
+2. O sistema exibe campos para e-mail e senha.
+3. O usuário informa os dados e confirma.
+4. O sistema valida as credenciais e, se corretas, libera o acesso.
+
+Fluxo Alternativo:
+- No passo 4, se as credenciais forem inválidas, o sistema exibe mensagem de erro e solicita nova tentativa.
+
+Pós-condições: O usuário tem acesso à sua conta no aplicativo.
+
+
