@@ -1,0 +1,28 @@
+Caso de Uso 7: Suporte a múltiplos grupos/eventos simultâneos
+
+Ator Principal: Gerente do Grupo/Evento
+
+Pré-condições: O usuário está altenticado no sistema
+
+Fluxo Principal:
+
+Fluxo Alternativo:
+
+Pós-condições:
+
+Caso de Uso 8: Ajustes Manuais para Divisões Personalizadas
+
+Ator Principal: Usuário do Aplicativo
+
+Pré-condições: O usuário está altenticado no sistema
+
+Fluxo Principal:
+1. O usuário seleciona a opção "Adicionar despesa" no menu.
+2. O sistema exibe um formulário para registrar a despesa.
+3. O usuário informa o valor total e o número de pessoas que irão dividir.
+4. O usuário seleciona a opção "Personalizar" após o calculo automático, onde pode escolher entre "Divisão por Porcentagem" ou "Divisão Livre".
+5. O usuário escolhe pagar diretamente pelo app ou registrar um pagamento feito fora do app (Pix, transferência, etc.).
+
+Fluxo Alternativo:
+
+Pós-condições:
