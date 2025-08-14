@@ -1,4 +1,4 @@
-# Rodei
+# Pagae
 NOME DO SISTEMA: Pagae
 
 OBJETIVO DO SISTEMA: Criar um aplicativo que facilite a divisão e o controle de despesas em grupo, automatizando cálculos, notificações e registros de pagamentos.
