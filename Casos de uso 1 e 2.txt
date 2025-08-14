@@ -1,3 +1,4 @@
+====== Primeira Funcionalidade ======
 Caso de Uso 1: Cadastro de Usuário
 Ator Principal: Usuário do aplicativo
 Pré-condições: O usuário possui acesso ao aplicativo.
@@ -29,5 +30,23 @@ Fluxo Alternativo:
 - No passo 4, se as credenciais forem inválidas, o sistema exibe mensagem de erro e solicita nova tentativa.
 
 Pós-condições: O usuário tem acesso à sua conta no aplicativo.
+
+====== Segunda Funcionalidade ======
+
+Caso de Uso 3: Registro de Despesa
+Ator Principal: Usuário do aplicativo
+Pré-condições: O usuário está autenticado no sistema.
+
+Fluxo Principal:
+
+1. O usuário acessa a opção "Registrar Despesa".
+2. O sistema exibe formulário para valor, descrição, data e participantes.
+3. O usuário informa se a despesa é individual ou coletiva.
+4. O sistema salva a despesa registrada.
+
+Fluxo Alternativo:
+- No passo 2, se o valor não for informado, o sistema impede o registro e exibe mensagem de erro.
+
+Pós-condições: A despesa fica registrada no histórico do usuário ou grupo.
 
 
