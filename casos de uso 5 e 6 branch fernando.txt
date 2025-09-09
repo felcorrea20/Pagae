@@ -1,0 +1,77 @@
+Caso de Uso 1 — Notificações de Pendências e Lembretes Automáticos
+
+Nome: Notificações de Pendências e Lembretes Automáticos
+Atores: Usuário (membro do grupo), Sistema Pagae
+Objetivo: Informar aos usuários sobre pagamentos pendentes e enviar lembretes automáticos para evitar atrasos.
+
+Pré-condições:
+
+O usuário está cadastrado no sistema.
+
+Há despesas registradas com status "pendente".
+
+Fluxo Principal:
+
+O sistema verifica periodicamente as despesas pendentes para cada usuário.
+
+O sistema identifica prazos de pagamento próximos ou vencidos.
+
+O sistema envia notificações (push ou e-mail) ao usuário com os detalhes da pendência.
+
+O usuário recebe o lembrete e pode acessar o aplicativo para visualizar ou quitar a despesa.
+
+Fluxos Alternativos:
+
+A1: O usuário desativa notificações → O sistema não envia lembretes para aquele usuário.
+
+A2: A pendência é quitada antes do envio do lembrete → O sistema não envia a notificação.
+
+Pós-condições:
+
+O usuário foi informado sobre a pendência ou prazo de pagamento.
+
+As notificações ficam registradas no histórico do sistema.
+
+------------------------------------------------------------------------------------
+
+Caso de Uso 2 — Relatórios Detalhados de Gastos e Saldos
+
+Nome: Relatórios Detalhados de Gastos e Saldos
+Atores: Usuário (membro do grupo), Sistema Pagae
+Objetivo: Fornecer relatórios organizados que mostram o histórico de despesas, valores pagos e saldos individuais ou do grupo.
+
+Pré-condições:
+
+O usuário está cadastrado no sistema.
+
+Existem despesas registradas no sistema.
+
+Fluxo Principal:
+
+O usuário acessa a funcionalidade de relatórios no aplicativo.
+
+O usuário seleciona filtros (por período, grupo, tipo de despesa, etc.).
+
+O sistema processa e exibe um relatório detalhado com:
+
+Lista de despesas
+
+Quem pagou cada uma
+
+Saldo individual de cada membro
+
+Total gasto no período
+
+O usuário pode exportar o relatório (PDF, Excel, etc.).
+
+Fluxos Alternativos:
+
+A1: Não há despesas no período selecionado → O sistema exibe mensagem “Nenhuma despesa encontrada”.
+
+A2: Usuário não tem permissão para ver os saldos do grupo → O sistema exibe apenas dados permitidos.
+
+Pós-condições:
+
+O usuário visualiza o relatório completo ou parcial.
+
+O relatório pode ser exportado para uso externo.
