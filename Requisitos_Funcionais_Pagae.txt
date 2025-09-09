@@ -19,11 +19,6 @@ Divisão de Valores
     RF10: O sistema deve calcular automaticamente a divisão justa das despesas entre os participantes.
     RF11: O sistema deve permitir ajustes manuais da divisão (quando alguém paga mais ou menos).
 
-Pagamentos
-    RF12: O usuário deve poder registrar pagamentos realizados dentro ou fora do aplicativo.
-    RF13: O sistema deve oferecer integração com métodos de pagamento (Pix, cartão de crédito, carteiras digitais).
-    RF14: O sistema deve atualizar automaticamente os saldos de cada usuário após o pagamento.
-
 Notificações e Lembretes
     RF15: O sistema deve enviar notificações push ou e-mail sobre despesas registradas, pendências e prazos.
     RF16: O sistema deve enviar lembretes automáticos para quem ainda não quitou sua parte.
