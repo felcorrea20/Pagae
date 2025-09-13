@@ -44,4 +44,4 @@ PRAZO E EXPECTATIVAS:
 Integrantes:  Felipe Corrêa, Guilherme Almeida, Lucas Villalba, Fernando Alexandre, Miguel Lima. 
 
 # Esboço da tela principal
-https://www.figma.com/proto/00UgPz9phuz6LTsmebpEM3/Rodei-App?node-id=1-2&t=JYMkUFLmb1i7ij0l-1
+![imagem feita no Figma](./images/pagaeFigma.jpeg)
