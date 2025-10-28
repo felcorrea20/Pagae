@@ -1,0 +1,51 @@
+Requisitos Funcionais (RF)
+
+    Cadastro de usuários
+
+        RF01: O sistema deve permitir o cadastro de novos usuários com dados pessoais (nome, e-mail, telefone, CNH válida, etc).
+
+        RF02: O sistema deve validar se a CNH é válida e está dentro do prazo.
+
+    Login e autenticação
+
+        RF03: O usuário deve poder fazer login com e-mail/senha ou autenticação por biometria (opcional).
+
+        RF04: O sistema deve permitir a recuperação de senha via e-mail.
+
+    Busca e reserva de veículos
+
+        RF05: O usuário deve poder buscar veículos disponíveis próximos com base em geolocalização.
+
+        RF06: O sistema deve permitir a reserva de veículos por hora com indicação de data e duração.
+
+        RF07: O sistema deve informar o preço da reserva com base no tempo de uso e tipo de veículo.
+
+    Controle de locação
+
+        RF08: O sistema deve liberar o veículo automaticamente via aplicativo (tranca/destranca).
+
+        RF09: O sistema deve acompanhar o tempo de uso em tempo real.
+
+        RF10: O usuário deve poder encerrar a locação pelo app.
+
+    Pagamento
+
+        RF11: O sistema deve calcular o valor da locação e exibir o resumo ao final do uso.
+
+        RF12: O usuário deve poder pagar via cartão de crédito, PIX ou carteiras digitais.
+
+    Histórico e suporte
+
+        RF13: O sistema deve mostrar o histórico de locações do usuário.
+
+        RF14: O usuário deve poder reportar problemas com o veículo (ex: danos, limpeza).
+
+        RF15: O sistema deve permitir acesso ao suporte via chat ou telefone.
+
+    Administração (para gestores)
+
+        RF16: O sistema deve permitir o cadastro e gerenciamento de veículos (modelo, placa, status, localização).
+
+        RF17: O sistema deve permitir acompanhar a localização e o uso de veículos em tempo real.
+
+        RF18: O sistema deve gerar relatórios de uso, faturamento e manutenção.

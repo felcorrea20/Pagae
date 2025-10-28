@@ -44,4 +44,5 @@ PRAZO E EXPECTATIVAS:
 Integrantes:  Felipe Corrêa, Guilherme Almeida, Lucas Villalba, Fernando Alexandre, Miguel Lima. 
 
 # Esboço da tela principal
+
 ![imagem feita no Figma](./images/pagaeFigma.jpeg)
