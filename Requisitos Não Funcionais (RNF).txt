@@ -1,0 +1,41 @@
+ Requisitos Não Funcionais (RNF)
+
+    Desempenho
+
+        RNF01: O aplicativo deve carregar a tela inicial em até 3 segundos.
+
+        RNF02: As buscas por veículos devem retornar resultados em até 2 segundos.
+
+    Segurança
+
+        RNF03: Todas as informações devem trafegar criptografadas (HTTPS).
+
+        RNF04: Os dados sensíveis dos usuários devem ser armazenados de forma segura (por exemplo, usando criptografia no banco de dados).
+
+        RNF05: O sistema deve possuir autenticação com múltiplos fatores opcional (MFA).
+
+    Usabilidade
+
+        RNF06: O aplicativo deve ser intuitivo e fácil de usar mesmo por usuários com pouca experiência com tecnologia.
+
+        RNF07: O sistema deve ter acessibilidade básica (compatível com leitores de tela, contraste adequado, etc).
+
+    Compatibilidade
+
+        RNF08: O aplicativo deve ser compatível com Android (versão X ou superior) e iOS (versão Y ou superior).
+
+        RNF09: Deve ser responsivo para uso também em tablets.
+
+    Disponibilidade
+
+        RNF10: O sistema deve estar disponível 99,9% do tempo (alta disponibilidade).
+
+        RNF11: O sistema deve continuar funcionando offline para ações básicas como visualização de reserva ativa (com sincronização posterior).
+
+    Escalabilidade
+
+        RNF12: O sistema deve ser escalável para atender aumento repentino de usuários sem perda de performance.
+
+    Manutenibilidade
+
+        RNF13: O código do sistema deve ser modular para facilitar futuras manutenções e adição de novas funcionalidades.
