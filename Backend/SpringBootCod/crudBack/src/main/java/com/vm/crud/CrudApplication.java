@@ -10,4 +10,8 @@ public class CrudApplication {
 		SpringApplication.run(CrudApplication.class, args);
 	}
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 3ca770f0144df391a6232340ef83a0fadfd2f1c8
