@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Despesas Compartilhadas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root{
+            --corprincipal: #01395A;
+            --corsecundaria: #0098A5;
+        }
+        .page { display: none; }
+        .page.active { display: block; }
+        .fade-in { animation: fadeIn 0.3s ease-in; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-[var(--corprincipal)] min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <img src="C:\Users\guilh\OneDrive\Documentos\FrontEndPagae\image-removebg-preview.png" class="h-16 w-16 object-contain"/>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button onclick="showPage('users')" class="nav-btn px-4 py-2 rounded-lg hover:bg-[var(--corsecundaria)] transition">Usuários</button>
+                    <button onclick="showPage('groups')" class="nav-btn px-4 py-2 rounded-lg hover:bg-[var(--corsecundaria)] transition">Grupos</button>
+                    <button onclick="showPage('expenses')" class="nav-btn px-4 py-2 rounded-lg hover:bg-[var(--corsecundaria)] transition">Despesas</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- PÁGINA: USUÁRIOS -->
+        <div id="users" class="page active fade-in">
+            <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6"> Gerenciar Usuários</h2>
+                
+                <!-- Formulário Criar Usuário -->
+                <div class="bg-[var(--corsecundaria)] rounded-lg p-6 mb-6">
+                    <h3 class="text-xl font-semibold text-white mb-4">Novo Usuário</h3>
+                    <form onsubmit="createUser(event)" class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <input type="text" id="userName" placeholder="Nome" required 
+                               class="px-4 py-2 rounded-lg border focus:ring-2 focus:[var(--corprincipal)] outline-none">
+                        <input type="email" id="userEmail" placeholder="Email" required 
+                               class="px-4 py-2 rounded-lg border focus:ring-2 focus:[var(--corprincipal)] outline-none">
+                        <input type="password" id="userPassword" placeholder="Senha" required 
+                               class="px-4 py-2 rounded-lg border focus:ring-2 focus:[var(--corprincipal)] outline-none">
+                        <button type="submit" class="bg-white text-[var(--corprincipal)] font-semibold px-6 py-2 rounded-lg hover:bg-gray-100 transition">
+                            Adicionar
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Lista de Usuários -->
+                <div id="usersList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+            </div>
+        </div>
+
+        <!-- PÁGINA: GRUPOS -->
+        <div id="groups" class="page">
+            <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">Gerenciar Grupos</h2>
+                
+                <!-- Formulário Criar Grupo -->
+                <div class="bg-[var(--corsecundaria)] rounded-lg p-6 mb-6">
+                    <h3 class="text-xl font-semibold text-white mb-4">Novo Grupo</h3>
+                    <form onsubmit="createGroup(event)" class="flex gap-4">
+                        <input type="text" id="groupName" placeholder="Nome do Grupo" required 
+                               class="flex-1 px-4 py-2 rounded-lg border focus:ring-2 focus:ring-teal-300 outline-none">
+                        <button type="submit" class="bg-white text-[var(--corsecundaria)] font-semibold px-6 py-2 rounded-lg hover:bg-gray-100 transition">
+                            Criar Grupo
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Lista de Grupos -->
+                <div id="groupsList" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+            </div>
+        </div>
+
+        <!-- PÁGINA: DESPESAS -->
+        <div id="expenses" class="page">
+            <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">Gerenciar Despesas</h2>
+                
+                <!-- Formulário Criar Despesa -->
+                <div class="bg-[var(--corsecundaria)] rounded-lg p-6 mb-6">
+                    <h3 class="text-xl font-semibold text-white mb-4">Nova Despesa</h3>
+                    <form onsubmit="createExpense(event)" class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                        <select id="expenseGroup" required class="px-4 py-2 rounded-lg border focus:ring-2 focus:ring-red-300 outline-none">
+                            <option value="">Selecione o Grupo</option>
+                        </select>
+                        <select id="expensePayer" required class="px-4 py-2 rounded-lg border focus:ring-2 focus:ring-red-300 outline-none">
+                            <option value="">Quem Pagou?</option>
+                        </select>
+                        <input type="text" id="expenseDescription" placeholder="Descrição" required 
+                               class="px-4 py-2 rounded-lg border focus:ring-2 focus:ring-red-300 outline-none">
+                        <input type="number" id="expenseAmount" placeholder="Valor (R$)" step="0.01" required 
+                               class="px-4 py-2 rounded-lg border focus:ring-2 focus:ring-red-300 outline-none">
+                        <button type="submit" class="bg-white font-semibold px-6 py-2 rounded-lg hover:bg-[var(--corprincipal)] transition">
+                            Adicionar
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Filtro de Grupo -->
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-semibold mb-2">Filtrar por Grupo:</label>
+                    <select id="filterGroup" onchange="loadExpenses()" class="w-full md:w-64 px-4 py-2 rounded-lg border focus:ring-2 focus:ring-indigo-300 outline-none">
+                        <option value="">Todos os Grupos</option>
+                    </select>
+                </div>
+
+                <!-- Lista de Despesas -->
+                <div id="expensesList" class="space-y-4"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Adicionar Membros -->
+    <div id="memberModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-xl p-6 max-w-md w-full mx-4">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">Adicionar Membro</h3>
+            <form onsubmit="addMemberToGroup(event)">
+                <input type="hidden" id="modalGroupId">
+                <select id="modalUserId" required class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-indigo-300 outline-none mb-4">
+                    <option value="">Selecione um usuário</option>
+                </select>
+                <div class="flex gap-3">
+                    <button type="button" onclick="closeMemberModal()" class="flex-1 px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="flex-1 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
+                        Adicionar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'http://localhost:8080';
+        let currentGroupId = null;
+
+        // Navegação entre páginas
+        function showPage(pageName) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById(pageName).classList.add('active');
+            
+            if (pageName === 'users') loadUsers();
+            if (pageName === 'groups') loadGroups();
+            if (pageName === 'expenses') {
+                loadGroupsForExpenses();
+                loadUsersForExpenses();
+                loadExpenses();
+            }
+        }
+
+        // ========== USUÁRIOS ==========
+        async function loadUsers() {
+            try {
+                const response = await fetch(`${API_URL}/users`);
+                const users = await response.json();
+                
+                const usersList = document.getElementById('usersList');
+                usersList.innerHTML = users.map(user => `
+                    <div class="bg-gradient-to-br from-white to-indigo-50 border border-indigo-200 rounded-lg p-4 hover:shadow-lg transition">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="font-bold text-lg text-gray-800">${user.name}</h4>
+                            <button onclick="deleteUser(${user.id})" class="text-red-500 hover:text-red-700">
+                                🗑️
+                            </button>
+                        </div>
+                        <p class="text-gray-600 text-sm">📧 ${user.email}</p>
+                        <p class="text-xs text-gray-400 mt-2">ID: ${user.id}</p>
+                    </div>
+                `).join('');
+            } catch (error) {
+                alert('Erro ao carregar usuários: ' + error.message);
+            }
+        }
+
+        async function createUser(event) {
+            event.preventDefault();
+            const user = {
+                name: document.getElementById('userName').value,
+                email: document.getElementById('userEmail').value,
+                password: document.getElementById('userPassword').value
+            };
+
+            try {
+                await fetch(`${API_URL}/users`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(user)
+                });
+                event.target.reset();
+                loadUsers();
+                alert('✅ Usuário criado com sucesso!');
+            } catch (error) {
+                alert('Erro ao criar usuário: ' + error.message);
+            }
+        }
+
+        async function deleteUser(id) {
+            if (!confirm('Tem certeza que deseja excluir este usuário?')) return;
+            
+            try {
+                await fetch(`${API_URL}/users/${id}`, { method: 'DELETE' });
+                loadUsers();
+                alert('✅ Usuário excluído com sucesso!');
+            } catch (error) {
+                alert('Erro ao excluir usuário: ' + error.message);
+            }
+        }
+
+        // ========== GRUPOS ==========
+        async function loadGroups() {
+            try {
+                const response = await fetch(`${API_URL}/groups`);
+                const groups = await response.json();
+                
+                const groupsList = document.getElementById('groupsList');
+                groupsList.innerHTML = await Promise.all(groups.map(async group => {
+                    const membersRes = await fetch(`${API_URL}/groups/${group.id}/members`);
+                    const members = await membersRes.json();
+                    
+                    return `
+                        <div class="bg-gradient-to-br from-white to-green-50 border border-green-200 rounded-lg p-5 hover:shadow-lg transition">
+                            <h4 class="font-bold text-xl text-gray-800 mb-3">${group.name}</h4>
+                            <div class="mb-3">
+                                <p class="text-sm font-semibold text-gray-600 mb-2">Membros (${members.length}):</p>
+                                <div class="space-y-1">
+                                    ${members.map(m => `
+                                        <div class="text-sm text-gray-700 bg-white rounded px-2 py-1">
+                                            👤 ${m.user.name}
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                            <button onclick="openMemberModal(${group.id})" 
+                                    class="w-full bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition">
+                                + Adicionar Membro
+                            </button>
+                        </div>
+                    `;
+                })).then(results => results.join(''));
+            } catch (error) {
+                alert('Erro ao carregar grupos: ' + error.message);
+            }
+        }
+
+        async function createGroup(event) {
+            event.preventDefault();
+            const group = { name: document.getElementById('groupName').value };
+
+            try {
+                await fetch(`${API_URL}/groups`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(group)
+                });
+                event.target.reset();
+                loadGroups();
+                alert('✅ Grupo criado com sucesso!');
+            } catch (error) {
+                alert('Erro ao criar grupo: ' + error.message);
+            }
+        }
+
+        async function openMemberModal(groupId) {
+            currentGroupId = groupId;
+            document.getElementById('modalGroupId').value = groupId;
+            
+            const response = await fetch(`${API_URL}/users`);
+            const users = await response.json();
+            
+            const select = document.getElementById('modalUserId');
+            select.innerHTML = '<option value="">Selecione um usuário</option>' +
+                users.map(u => `<option value="${u.id}">${u.name}</option>`).join('');
+            
+            document.getElementById('memberModal').classList.remove('hidden');
+            document.getElementById('memberModal').classList.add('flex');
+        }
+
+        function closeMemberModal() {
+            document.getElementById('memberModal').classList.add('hidden');
+            document.getElementById('memberModal').classList.remove('flex');
+        }
+
+        async function addMemberToGroup(event) {
+            event.preventDefault();
+            const groupId = document.getElementById('modalGroupId').value;
+            const userId = document.getElementById('modalUserId').value;
+
+            try {
+                await fetch(`${API_URL}/groups/${groupId}/members`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ userId })
+                });
+                closeMemberModal();
+                loadGroups();
+                alert('✅ Membro adicionado com sucesso!');
+            } catch (error) {
+                alert('Erro ao adicionar membro: ' + error.message);
+            }
+        }
+
+        // ========== DESPESAS ==========
+        async function loadGroupsForExpenses() {
+            const response = await fetch(`${API_URL}/groups`);
+            const groups = await response.json();
+            
+            const selects = [document.getElementById('expenseGroup'), document.getElementById('filterGroup')];
+            selects.forEach((select, index) => {
+                const defaultOption = index === 0 ? 'Selecione o Grupo' : 'Todos os Grupos';
+                select.innerHTML = `<option value="">${defaultOption}</option>` +
+                    groups.map(g => `<option value="${g.id}">${g.name}</option>`).join('');
+            });
+        }
+
+        async function loadUsersForExpenses() {
+            const response = await fetch(`${API_URL}/users`);
+            const users = await response.json();
+            
+            document.getElementById('expensePayer').innerHTML = 
+                '<option value="">Quem Pagou?</option>' +
+                users.map(u => `<option value="${u.id}">${u.name}</option>`).join('');
+        }
+
+        async function loadExpenses() {
+            const filterGroupId = document.getElementById('filterGroup').value;
+            const url = filterGroupId 
+                ? `${API_URL}/expenses/group/${filterGroupId}`
+                : `${API_URL}/groups`;
+
+            try {
+                let expenses = [];
+                
+                if (filterGroupId) {
+                    const response = await fetch(url);
+                    expenses = await response.json();
+                } else {
+                    const groupsRes = await fetch(url);
+                    const groups = await groupsRes.json();
+                    
+                    for (const group of groups) {
+                        const expensesRes = await fetch(`${API_URL}/expenses/group/${group.id}`);
+                        const groupExpenses = await expensesRes.json();
+                        expenses = [...expenses, ...groupExpenses];
+                    }
+                }
+
+                const expensesList = document.getElementById('expensesList');
+                expensesList.innerHTML = expenses.length === 0 
+                    ? '<p class="text-center text-gray-500 py-8">Nenhuma despesa registrada</p>'
+                    : expenses.map(exp => `
+                        <div class="bg-gradient-to-r from-white to-orange-50 border border-orange-200 rounded-lg p-5 hover:shadow-lg transition">
+                            <div class="flex justify-between items-start mb-3">
+                                <div>
+                                    <h4 class="font-bold text-xl text-gray-800">${exp.description}</h4>
+                                    <p class="text-sm text-gray-600">Pago por: ${exp.payer.name}</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-2xl font-bold text-orange-600">R$ ${parseFloat(exp.amount).toFixed(2)}</p>
+                                </div>
+                            </div>
+                            <div class="border-t pt-3">
+                                <p class="text-sm font-semibold text-gray-600 mb-2">Divisão:</p>
+                                <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
+                                    ${exp.splits.map(s => `
+                                        <div class="bg-white rounded px-3 py-2 text-sm">
+                                            <p class="font-semibold">${s.user.name}</p>
+                                            <p class="text-orange-600">R$ ${parseFloat(s.amount).toFixed(2)}</p>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    `).join('');
+            } catch (error) {
+                alert('Erro ao carregar despesas: ' + error.message);
+            }
+        }
+
+        async function createExpense(event) {
+            event.preventDefault();
+            const expense = {
+                groupId: document.getElementById('expenseGroup').value,
+                payerId: document.getElementById('expensePayer').value,
+                description: document.getElementById('expenseDescription').value,
+                amount: document.getElementById('expenseAmount').value
+            };
+
+            try {
+                await fetch(`${API_URL}/expenses`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(expense)
+                });
+                event.target.reset();
+                loadExpenses();
+                alert('✅ Despesa criada e dividida com sucesso!');
+            } catch (error) {
+                alert('Erro ao criar despesa: ' + error.message);
+            }
+        }
+
+        // Inicialização
+        loadUsers();
+    </script>
+</body>
+</html>
