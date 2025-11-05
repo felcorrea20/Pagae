@@ -33,8 +33,24 @@ public class ExpenseController {
     /**
      * Listar despesas de um grupo
      */
-    @GetMapping("/group/{groupId}")
+    @GetMapping(path = "/group/{groupId}")
     public List<Expense> getExpenses(@PathVariable Long groupId) {
         return expenseService.getExpensesByGroup(groupId);
     }
+
+
+    @PutMapping(path = "/group/{groupId}/edit/{expenseId}")
+    public Expense editExpense (@RequestBody Map<String, String> data,@PathVariable Long groupId,@PathVariable Long expenseId) {
+        Long payerId = Long.valueOf(data.get("payerId"));
+        String description = data.get("description");
+        BigDecimal amount = new BigDecimal(data.get("amount"));
+
+        return expenseService.editExpenses(groupId, payerId, expenseId, description, amount);
+    }
+
+    @DeleteMapping (path = "/group/{groupId}/expense/{expenseId}")
+    public void expenseDelete (@PathVariable Long expenseId) {
+        expenseService.expenseDelete(expenseId);
+    }
+
 }
