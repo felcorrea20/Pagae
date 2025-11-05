@@ -59,8 +59,8 @@ function renderUsersTable(users) {
             <td>${user.name}</td>
             <td>${user.email}</td>
             <td>
-                <button class = "doubleBtn editBtn" onclick="editUser(${user.id})">Editar</button>
-                <button class = "doubleBtn exeBtn" onclick="deleteUser(${user.id})">Excluir</button>
+                <button onclick="editUser(${user.id})">Editar</button>
+                <button onclick="deleteUser(${user.id})">Excluir</button>
             </td>
         `;
         tableBody.appendChild(row);
