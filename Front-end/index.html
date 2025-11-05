@@ -7,58 +7,63 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Cadastro de Usuários</h1>
+    <h1>Criar Conta</h1>
     <form id="cadastroForm">
-        <div>
-            <label for="nome">Nome</label>
-            <input type="text" id="name" name="name" required>
+        <div class="input-div">
+            <label class="lbl" for="nome">Nome</label>
+            <input class="inputs" type="text" id="name" name="name" required>
         </div>
-        <div>
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" required>
+        <div class="input-div">
+            <label class="lbl" for="email">E-mail</label>
+            <input class="inputs" type="email" id="email" name="email" required>
         </div>
-        <div>
-            <label for="senha">Senha</label>
-            <input type="password" id="password" name="password" required>
+        <div class="input-div">
+            <label class="lbl" for="senha">Senha</label>
+            <input class="inputs" type="password" id="password" name="password" required>
         </div>
-        <button type="submit">Cadastrar</button>
+        <br><br><br>
+        <button class="btn" id="btnCadastro" type="submit">Registrar Conta</button>
     </form>
 
-    <h1>Lista de Usuários</h1>
+    <div id = "lista-usuarios">
+        <h1>Lista de Usuários</h1>
 
-    <div class="table-container">
-        <table id="usersTable">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>E-mail</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                </tbody>
-        </table>
+        <div class="table-container">
+            <table id="usersTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+        </div>
     </div>
     
     <div id="editFormContainer" style="display: none;">
     <h2>Editar Usuário</h2>
     <form id="editForm">
         <input type="hidden" id="edit-id" name="id">
-        <div>
-            <label for="edit-name">Nome:</label>
-            <input type="text" id="edit-name" name="name" required>
+        <div class="input-div">
+            <label class="lbl" for="edit-name">Nome:</label>
+            <input class="inputs" type="text" id="edit-name" name="name" required>
         </div>
-        <div>
-            <label for="edit-email">E-mail:</label>
-            <input type="email" id="edit-email" name="email" required>
+        <div class="input-div">
+            <label class="lbl" for="edit-email">E-mail:</label>
+            <input class="inputs" type="email" id="edit-email" name="email" required>
         </div>
-        <div>
-            <label for="edit-password">Senha:</label>
-            <input type="password" id="edit-password" name="password">
+        <div class="input-div">
+            <label class="lbl" for="edit-password">Senha:</label>
+            <input class="inputs" type="password" id="edit-password" name="password">
         </div>
-        <button type="submit">Salvar Alterações</button>
-        <button type="button" onclick="cancelEdit()">Cancelar</button>
+        <br>
+        <button class="doubleBtn" id="saveBtn" type="submit">Salvar Alterações</button>
+        <br><br>
+        <button class="doubleBtn" id="cancelBtn" type="button" onclick="cancelEdit()">Cancelar</button>
     </form>
 </div>
     
