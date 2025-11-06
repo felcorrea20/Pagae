@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "TB_EXPENSE_SPLIT")
+@Table(name = "TB_EXPENSES_SPLITS")
 public class ExpenseSplit {
 
     @Id

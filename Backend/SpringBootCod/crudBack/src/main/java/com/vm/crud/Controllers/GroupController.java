@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/groups")
@@ -49,5 +50,15 @@ public class GroupController {
     @GetMapping
     public List<Group> getAllGroups() {
         return groupService.getAllGroups();
+    }
+
+    @PutMapping (path = "/{groupId}/edit")
+    public Group editGroup (@PathVariable Long groupId, @RequestBody Group group) {
+        return groupService.editGroup (groupId, group);
+    }
+
+    @DeleteMapping (path = "/delete_group/{groupId}")
+    public void deleteGroup (@PathVariable Long groupId) {
+        groupService.deleteGroup(groupId);
     }
 }

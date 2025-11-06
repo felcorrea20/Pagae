@@ -1,5 +1,6 @@
 package com.vm.crud.Services;
 
+import com.vm.crud.exceptions.ResourceNotFoundException;
 import com.vm.crud.models.Group;
 import com.vm.crud.models.GroupMember;
 import com.vm.crud.models.User;
@@ -8,8 +9,10 @@ import com.vm.crud.repository.GroupRepository;
 import com.vm.crud.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class GroupService {
@@ -58,5 +61,19 @@ public class GroupService {
      */
     public List<Group> getAllGroups() {
         return groupRepository.findAll();
+    }
+
+    public Group editGroup(Long id, Group group) {
+        Group grp = groupRepository.findById(id).orElseThrow(() ->new ResourceNotFoundException("Group " + id + " not found"));
+
+        grp.setName(group.getName());
+
+        return groupRepository.save(grp);
+    }
+
+    @Transactional
+    public void deleteGroup(Long id) {
+        groupMemberRepository.deleteByGroupId(id);
+        groupRepository.deleteById(id);
     }
 }
