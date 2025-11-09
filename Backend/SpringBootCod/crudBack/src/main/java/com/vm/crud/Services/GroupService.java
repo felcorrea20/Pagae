@@ -85,7 +85,7 @@ public class GroupService {
 
     @Transactional
     public Group removeMember(Long groupId, Long memberId) {
-        groupMemberRepository.deleteById(memberId);
+        groupMemberRepository.deleteByUserId(memberId);
 
         Group gp = groupRepository.findById(groupId).get();
 
