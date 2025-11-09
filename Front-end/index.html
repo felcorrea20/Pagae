@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagae</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Criar Conta</h1>
+    <form id="cadastroForm">
+        <div class="input-div">
+            <label class="lbl" for="nome">Nome</label>
+            <input class="inputs" type="text" id="name" name="name" required>
+        </div>
+        <div class="input-div">
+            <label class="lbl" for="email">E-mail</label>
+            <input class="inputs" type="email" id="email" name="email" required>
+        </div>
+        <div class="input-div">
+            <label class="lbl" for="senha">Senha</label>
+            <input class="inputs" type="password" id="password" name="password" required>
+        </div>
+        <br><br><br>
+        <button class="btn" id="btnCadastro" type="submit">Registrar Conta</button>
+    </form>
+
+    <div id = "lista-usuarios">
+        <h1>Lista de Usuários</h1>
+
+        <div class="table-container">
+            <table id="usersTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div id="editFormContainer" style="display: none;">
+    <h2>Editar Usuário</h2>
+    <form id="editForm">
+        <input type="hidden" id="edit-id" name="id">
+        <div class="input-div">
+            <label class="lbl" for="edit-name">Nome:</label>
+            <input class="inputs" type="text" id="edit-name" name="name" required>
+        </div>
+        <div class="input-div">
+            <label class="lbl" for="edit-email">E-mail:</label>
+            <input class="inputs" type="email" id="edit-email" name="email" required>
+        </div>
+        <div class="input-div">
+            <label class="lbl" for="edit-password">Senha:</label>
+            <input class="inputs" type="password" id="edit-password" name="password">
+        </div>
+        <br>
+        <button class="doubleBtn" id="saveBtn" type="submit">Salvar Alterações</button>
+        <br><br>
+        <button class="doubleBtn" id="cancelBtn" type="button" onclick="cancelEdit()">Cancelar</button>
+    </form>
+</div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>

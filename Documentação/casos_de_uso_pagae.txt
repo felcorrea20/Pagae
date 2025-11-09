@@ -1,0 +1,165 @@
+Caso de Uso 1: Divisão de Conta em Grupo
+Ator Principal: Usuário do aplicativo
+Pré-condições: O usuário está autenticado no sistema.
+
+Fluxo Principal:
+1. O usuário seleciona a opção "Adicionar despesa" no menu.
+2. O sistema exibe um formulário para registrar a despesa.
+3. O usuário informa o valor total e o número de pessoas que irão dividir.
+4. O sistema calcula automaticamente a parte de cada pessoa.
+5. O usuário escolhe pagar diretamente pelo app ou registrar um pagamento feito fora do app (Pix, transferência, etc.).
+
+Fluxo Alternativo:
+- No passo 3, se o usuário não informar o número de pessoas, o sistema exibe uma mensagem de erro e impede o cálculo até o preenchimento correto.
+
+Pós-condições: A despesa é registrada e o valor devido por cada participante é calculado e armazenado.
+
+
+Caso de Uso 2: Gerenciamento de Despesas em Viagens
+Ator Principal: Usuário do aplicativo
+Pré-condições: O usuário está autenticado no sistema.
+
+Fluxo Principal:
+1. O usuário seleciona a opção "Despesas de Viagem" no menu.
+2. O sistema exibe a lista de viagens cadastradas ou permite criar uma nova.
+3. O usuário registra cada gasto (hotel, transporte, alimentação, etc.).
+4. O usuário define quais pessoas participaram de cada despesa, ou deixa que o sistema divida igualmente entre os participantes da viagem.
+5. No final da viagem, o sistema calcula e apresenta um saldo indicando quem deve pagar a quem.
+
+Fluxo Alternativo:
+- No passo 3, se o valor da despesa não for informado, o sistema impede o registro e exibe mensagem de erro.
+
+Pós-condições: O saldo final da viagem é calculado e registrado, garantindo divisão justa entre os participantes.
+
+
+Caso de Uso 3: Controle de Pagamentos de Serviços Compartilhados
+Ator Principal: Usuário do aplicativo
+Pré-condições: O usuário está autenticado no sistema.
+
+Fluxo Principal:
+1. O usuário acessa a opção "Serviços Compartilhados".
+2. O sistema exibe a lista de contas mensais cadastradas (aluguel, internet, luz, etc.).
+3. O usuário registra o valor da conta e a data de vencimento.
+4. Ao registrar o pagamento, o sistema divide automaticamente o valor entre os participantes.
+5. O sistema envia notificações para quem ainda não pagou.
+
+Fluxo Alternativo:
+- No passo 3, se o valor ou a data não forem informados, o sistema exibe mensagem de erro e não registra a conta.
+
+Pós-condições: Todos os participantes têm registro atualizado de suas pendências e pagamentos realizados.
+
+
+Caso de Uso 4: Controle de Despesas de Projetos ou Eventos
+Ator Principal: Organizador do evento/projeto
+Pré-condições: O organizador está autenticado no sistema.
+
+Fluxo Principal:
+1. O organizador acessa a opção "Despesas de Evento/Projeto".
+2. O sistema exibe a lista de eventos cadastrados ou permite criar um novo.
+3. O organizador registra cada despesa, associando participantes.
+4. O sistema permite que cada pessoa pague diretamente ou que o organizador centralize o pagamento.
+5. Ao final, o sistema gera um relatório detalhado das contribuições.
+
+Fluxo Alternativo:
+- No passo 3, se não houver participantes associados, o sistema divide igualmente entre todos cadastrados no evento.
+
+Pós-condições: O relatório final do evento mostra a divisão justa e os valores pagos por cada participante.
+
+
+Caso de Uso 5: Pagamentos Pessoais ou Empréstimos entre Amigos
+Ator Principal: Usuário do aplicativo
+Pré-condições: O usuário está autenticado no sistema.
+
+Fluxo Principal:
+1. O usuário seleciona "Registrar Empréstimo/Pagamento".
+2. O sistema exibe formulário para registrar valor e pessoa envolvida.
+3. O sistema calcula o saldo devedor e registra pagamentos parciais ou totais.
+4. O sistema envia lembretes automáticos sobre pendências.
+
+Fluxo Alternativo:
+- No passo 2, se não houver identificação da pessoa, o sistema não permite salvar.
+
+Pós-condições: O histórico de empréstimos e pagamentos fica registrado no sistema.
+
+
+Caso de Uso 6: Despesas de Família
+Ator Principal: Usuário do aplicativo (membro da família)
+Pré-condições: O usuário está autenticado no sistema.
+
+Fluxo Principal:
+1. O usuário acessa a opção "Despesas Familiares".
+2. O sistema permite cadastrar despesas mensais (mercado, transporte, escola, etc.).
+3. As despesas podem ser associadas a todos ou a contas específicas (alimentação, escola, etc.).
+4. O sistema gera relatórios automáticos para acompanhamento do orçamento.
+
+Fluxo Alternativo:
+- No passo 2, se não houver valor informado, o sistema impede o registro.
+
+Pós-condições: Os membros da família têm uma visão clara do orçamento e impacto das despesas.
+
+
+Caso de Uso 7: Pagamentos de Compras Coletivas
+Ator Principal: Organizador da compra
+Pré-condições: O organizador está autenticado no sistema.
+
+Fluxo Principal:
+1. O organizador cria um evento de "Compra Coletiva".
+2. O sistema registra a despesa total e calcula a parte de cada participante.
+3. Os participantes fazem o pagamento pelo app ou registram pagamento externo.
+4. O organizador paga o valor total ao fornecedor.
+
+Fluxo Alternativo:
+- No passo 3, se um participante não pagar, o sistema envia notificações e mantém registro da pendência.
+
+Pós-condições: O pagamento coletivo é concluído e registrado para todos os participantes.
+
+
+Caso de Uso 8: Controle de Divisão de Despesas de Aluguel
+Ator Principal: Morador cadastrado
+Pré-condições: O morador está autenticado no sistema.
+
+Fluxo Principal:
+1. O morador acessa a opção "Divisão de Aluguel".
+2. O sistema registra o valor do aluguel e outros custos fixos (água, luz, internet).
+3. Cada morador registra o quanto pagou.
+4. O sistema calcula quem deve pagar ou quem tem crédito.
+5. Possibilidade de ajustes manuais para casos específicos.
+
+Fluxo Alternativo:
+- No passo 3, se nenhum pagamento for registrado, o sistema mantém todos como pendentes.
+
+Pós-condições: O saldo de cada morador é atualizado e registrado.
+
+
+Caso de Uso 9: Divisão de Contas de Jantar ou Confraternização
+Ator Principal: Organizador do evento
+Pré-condições: O organizador está autenticado no sistema.
+
+Fluxo Principal:
+1. O organizador cria um evento de "Jantar/Confraternização".
+2. O sistema registra a despesa total e divide entre os participantes.
+3. O sistema envia notificações e permite pagamento direto pelo app.
+
+Fluxo Alternativo:
+- No passo 2, se a despesa não for informada, o sistema impede o cálculo.
+
+Pós-condições: Os participantes têm registro e confirmação de pagamento da sua parte.
+
+
+Caso de Uso 10: Gestão de Cartões de Crédito Compartilhados
+Ator Principal: Usuário do cartão compartilhado
+Pré-condições: O usuário está autenticado no sistema.
+
+Fluxo Principal:
+1. O usuário acessa a opção "Cartão Compartilhado".
+2. O sistema permite registrar cada gasto feito com o cartão.
+3. O sistema divide o valor automaticamente entre os participantes.
+4. Cada participante recebe notificação sobre sua parte da fatura.
+5. O saldo total do cartão é atualizado e exibido.
+
+Fluxo Alternativo:
+- No passo 2, se o gasto não tiver valor ou descrição, o sistema impede o registro.
+
+Pós-condições: Todos acompanham a fatura do cartão e seus respectivos valores a pagar.
+
+
