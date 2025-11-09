@@ -1,0 +1,37 @@
+Caso de Uso 7: Suporte a múltiplos grupos/eventos simultâneos
+
+Ator Principal: Gerente do Grupo/Evento
+
+Pré-condições: O usuário está altenticado no sistema
+
+Fluxo Principal:
+1. O usuário acessa a opção "Grupos/Eventos"
+2. O usuário seleciona a opção "Criar Grupos/Eventos"
+3. O sistema exibe o formulário para inserir informações como: Nome, Descrição, Moeda, etc.
+4. Após a criação do grupo/evento, o usuário adiciona os membros.
+5. O usuário pode gerenciar despesas e saldo.
+6. O usuário pode criar quantos grupos/eventos quiser.
+
+Fluxo Alternativo:
+1. O usuário recebe um link para um grupo já existente de outro usuário.
+2. O usuário entra no grupo e com a permissão do gerente do grupo, pode também gerenciar as despesas, membros, etc.
+
+Caso de Uso 8: Ajustes Manuais para Divisões Personalizadas
+
+Ator Principal: Usuário do Aplicativo
+
+Pré-condições: O usuário está altenticado no sistema
+
+Fluxo Principal:
+1. O usuário acessa a opção "Registrar Despesa".
+2. O sistema exibe formulário para valor, descrição, data e participantes.
+3. O usuário seleciona a opção "Personalizar", onde pode escolher entre "Divisão por Porcentagem" ou "Divisão Livre".
+4. O usuário define os valores entre os membros e confirma.
+5. O usuário escolhe pagar diretamente pelo app ou registrar um pagamento feito fora do app (Pix, transferência, etc.).
+
+Fluxo Alternativo:
+1. O usuário acessa a opção "Grupos".
+2. O sistema exibe os grupos existentes.
+3. O usuário encontra o grupo e seleciona a opção "Registrar Despesa".
+- O usuário informa o valor e pode seleceionar a opção "Personalizar" para escolher "Divisão por Porcentagem" ou "Divisão Livre".
+- O processo segue como no fluxo principal.

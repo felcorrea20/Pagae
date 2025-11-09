@@ -1,0 +1,28 @@
+Requisitos Não Funcionais (RNF) – Pagae
+
+Desempenho
+    RNF01: O aplicativo deve carregar a tela inicial em até 3 segundos.
+    RNF02: O sistema deve calcular e exibir a divisão de uma despesa em até 2 segundos.
+
+Segurança
+    RNF03: Todas as informações devem trafegar criptografadas (HTTPS).
+    RNF04: Dados sensíveis dos usuários (senhas, métodos de pagamento) devem ser armazenados de forma segura (com criptografia no banco de dados).
+    RNF05: O sistema deve oferecer autenticação em dois fatores opcional (MFA).
+
+Usabilidade
+    RNF06: O aplicativo deve ser intuitivo e fácil de usar mesmo por usuários com pouca experiência tecnológica.
+    RNF07: O sistema deve ter acessibilidade básica (compatível com leitores de tela, contraste adequado, etc.).
+
+Compatibilidade
+    RNF08: O aplicativo deve ser compatível com Android (versão X ou superior) e iOS (versão Y ou superior).
+    RNF09: A interface deve ser responsiva para uso em tablets e navegadores (painel web).
+
+Disponibilidade
+    RNF10: O sistema deve estar disponível 99,9% do tempo.
+    RNF11: O sistema deve permitir uso offline para visualização de despesas já registradas, com sincronização posterior.
+
+Escalabilidade
+    RNF12: O sistema deve ser escalável para atender aumento repentino de usuários sem perda de desempenho.
+
+Manutenibilidade
+    RNF13: O código do sistema deve ser modular e documentado para facilitar manutenções e adição de novas funcionalidades.

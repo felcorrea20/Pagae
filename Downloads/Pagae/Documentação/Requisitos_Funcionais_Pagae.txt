@@ -1,0 +1,33 @@
+Requisitos Funcionais (RF) – Pagae
+
+Cadastro e Login de Usuários
+    RF01: O sistema deve permitir o cadastro de novos usuários com dados pessoais (nome, e-mail, telefone, senha).
+    RF02: O sistema deve validar o e-mail e permitir autenticação via senha ou biometria (quando disponível).
+    RF03: O sistema deve permitir a recuperação de senha via e-mail.
+
+Grupos e Eventos
+    RF04: O usuário deve poder criar e gerenciar grupos ou eventos (ex.: viagens, repúblicas, confraternizações).
+    RF05: O sistema deve permitir que o usuário convide outras pessoas para participar de um grupo/evento.
+    RF06: O sistema deve permitir a associação de despesas a grupos/eventos específicos.
+
+Registro de Despesas
+    RF07: O usuário deve poder registrar despesas individuais ou coletivas, informando valor, descrição e participantes.
+    RF08: O sistema deve permitir anexar comprovantes de pagamento (ex.: foto de recibo).
+    RF09: O sistema deve permitir a edição ou exclusão de despesas por quem as cadastrou.
+
+Divisão de Valores
+    RF10: O sistema deve calcular automaticamente a divisão justa das despesas entre os participantes.
+    RF11: O sistema deve permitir ajustes manuais da divisão (quando alguém paga mais ou menos).
+
+Notificações e Lembretes
+    RF15: O sistema deve enviar notificações push ou e-mail sobre despesas registradas, pendências e prazos.
+    RF16: O sistema deve enviar lembretes automáticos para quem ainda não quitou sua parte.
+
+Relatórios e Histórico
+    RF17: O sistema deve gerar relatórios detalhados de gastos por grupo, evento ou período.
+    RF18: O usuário deve poder exportar relatórios em PDF ou Excel.
+    RF19: O sistema deve manter o histórico de todas as despesas e pagamentos feitos pelo usuário.
+
+Administração
+    RF20: O sistema deve permitir que administradores ou organizadores tenham visão consolidada das despesas do grupo/evento.
+    RF21: O sistema deve permitir bloquear ou remover usuários que não cumprirem regras de uso.
