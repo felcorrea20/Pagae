@@ -1,16 +1,14 @@
 package com.vm.crud.Services;
 
 import com.vm.crud.exceptions.ResourceNotFoundException;
-import com.vm.crud.models.Group;
-import com.vm.crud.models.GroupMember;
-import com.vm.crud.models.User;
-import com.vm.crud.repository.GroupMemberRepository;
-import com.vm.crud.repository.GroupRepository;
-import com.vm.crud.repository.UserRepository;
+import com.vm.crud.models.*;
+import com.vm.crud.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,6 +23,12 @@ public class GroupService {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private ExpenseRepository expenseRepository;
+
+    @Autowired
+    private ExpenseSplitRepository expenseSplitRepository;
 
     /**
      * Criar um grupo
@@ -66,7 +70,9 @@ public class GroupService {
     public Group editGroup(Long id, Group group) {
         Group grp = groupRepository.findById(id).orElseThrow(() ->new ResourceNotFoundException("Group " + id + " not found"));
 
-        grp.setName(group.getName());
+        if (group.getName() != null && group.getName() != "") {
+            grp.setName(group.getName());
+        }
 
         return groupRepository.save(grp);
     }
@@ -75,5 +81,36 @@ public class GroupService {
     public void deleteGroup(Long id) {
         groupMemberRepository.deleteByGroupId(id);
         groupRepository.deleteById(id);
+    }
+
+    @Transactional
+    public Group removeMember(Long groupId, Long memberId) {
+        groupMemberRepository.deleteById(memberId);
+
+        Group gp = groupRepository.findById(groupId).get();
+
+        List<Expense> expenses = expenseRepository.findByGroupId(groupId);
+
+        List<GroupMember> gm = groupMemberRepository.findByGroupId(groupId);
+
+        int QTDMembers = gm.size();
+
+        for (Expense expense : expenses) {
+
+            BigDecimal valuePerPerson = expense.getAmount().divide(BigDecimal.valueOf(QTDMembers), 2, RoundingMode.HALF_UP);
+
+            expenseSplitRepository.deleteByExpenseId(expense.getId());
+
+            for (GroupMember member : gm) {
+                ExpenseSplit split = new ExpenseSplit();
+                split.setExpense(expense);
+                split.setUser(member.getUser());
+                split.setAmount(valuePerPerson);
+
+                expenseSplitRepository.save(split);
+            }
+        }
+
+        return groupRepository.save(gp);
     }
 }

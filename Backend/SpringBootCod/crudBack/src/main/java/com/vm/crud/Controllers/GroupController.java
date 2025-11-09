@@ -57,6 +57,13 @@ public class GroupController {
         return groupService.editGroup (groupId, group);
     }
 
+    @PutMapping (path = "/{groupId}/edit/remove_members")
+    public Group removeMember (@PathVariable Long groupId, @RequestBody Map<String, String> data) {
+        Long memberId = Long.valueOf (data.get("memberId"));
+
+        return groupService.removeMember (groupId, memberId);
+    }
+
     @DeleteMapping (path = "/delete_group/{groupId}")
     public void deleteGroup (@PathVariable Long groupId) {
         groupService.deleteGroup(groupId);
