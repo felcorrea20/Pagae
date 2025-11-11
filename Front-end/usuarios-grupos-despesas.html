@@ -356,11 +356,11 @@
             }
         }
 
-        async function deleteGroup(id) {
+        async function deleteGroup(groupId) {
             if (!confirm('⚠️ Tem certeza que deseja excluir este grupo?\n\nIsso também excluirá todas as despesas e membros associados!')) return;
             
             try {
-                const response = await fetch(`${API_URL}/groups/delete_group/{groupId}`, { 
+                const response = await fetch(`${API_URL}/groups/delete_group/${groupId}`, { 
                     method: 'DELETE' 
                 });
                 
